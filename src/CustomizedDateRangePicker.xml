@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="rapiddata.customizeddaterangepicker.CustomizedDateRangePicker"
+        pluginWidget="true"
+        needsEntityContext="true"
+        offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+
+    <name>Customized Date Range Picker</name>
+    <description>Customizable date and time range picker for Mendix applications.</description>
+    <icon/>
+
+    <properties>
+        <propertyGroup caption="General">
+
+            <property key="dateRange" type="boolean" defaultValue="true">
+                <caption>Date range?</caption>
+                <description>Enable selection of a start and end date.</description>
+            </property>
+
+            <property key="startDate" type="attribute" required="true">
+                <caption>Start date attribute</caption>
+                <description>DateTime attribute used for the selected date or start date.</description>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
+
+            <property key="endDate" type="attribute" required="false">
+                <caption>End date attribute</caption>
+                <description>Configure this attribute when Date Range is enabled.</description>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
+
+            <property key="pickerType" type="enumeration" defaultValue="DateTime">
+                <caption>Picker type</caption>
+                <description>Choose the date or time selection mode.</description>
+                <enumerationValues>
+                    <enumerationValue key="Date">Date</enumerationValue>
+                    <enumerationValue key="Time">Time</enumerationValue>
+                    <enumerationValue key="DateTime">Date and time</enumerationValue>
+                    <enumerationValue key="Year">Year</enumerationValue>
+                </enumerationValues>
+            </property>
+
+            <property key="placeholder" type="string" defaultValue="Select date and time">
+                <caption>Placeholder text</caption>
+                <description>Text displayed when no date is selected.</description>
+            </property>
+
+            <property key="labelCaption" type="string" defaultValue="Date range">
+                <caption>Label caption</caption>
+                <description>Label displayed above the picker.</description>
+            </property>
+
+            <property key="showLabel" type="boolean" defaultValue="true">
+                <caption>Show label</caption>
+                <description>Display or hide the label.</description>
+            </property>
+
+            <property key="clearable" type="boolean" defaultValue="true">
+                <caption>Clearable</caption>
+                <description>Allow the selected dates to be cleared.</description>
+            </property>
+
+            <property key="inline" type="boolean" defaultValue="false">
+                <caption>Inline</caption>
+                <description>Render the picker inline instead of in a popover.</description>
+            </property>
+
+            <property key="editable" type="boolean" defaultValue="true">
+                <caption>Editable</caption>
+                <description>Allow the user to change the selected dates.</description>
+            </property>
+
+            <property key="required" type="boolean" defaultValue="false">
+                <caption>Required</caption>
+                <description>Require a start date. In range mode, both dates are required for a complete range.</description>
+            </property>
+
+            <property key="timeInterval" type="integer" defaultValue="15">
+                <caption>Time interval in minutes</caption>
+                <description>Interval between selectable times, aligned from the beginning of each hour.</description>
+            </property>
+
+            <property key="timeFormat" type="enumeration" defaultValue="hour24">
+                <caption>Time format</caption>
+                <description>Choose 12-hour or 24-hour time.</description>
+                <enumerationValues>
+                    <enumerationValue key="hour12">12-hour</enumerationValue>
+                    <enumerationValue key="hour24">24-hour</enumerationValue>
+                </enumerationValues>
+            </property>
+
+        </propertyGroup>
+
+        <propertyGroup caption="Date settings">
+
+            <property key="showWeekNumbers" type="boolean" defaultValue="false">
+                <caption>Show week numbers</caption>
+                <description>Display week numbers in the calendar.</description>
+            </property>
+
+            <property key="minDate" type="expression" required="false">
+                <caption>Minimum date</caption>
+                <description>Expression returning the earliest selectable DateTime.</description>
+                <returnType type="DateTime"/>
+            </property>
+
+            <property key="maxDate" type="expression" required="false">
+                <caption>Maximum date</caption>
+                <description>Expression returning the latest selectable DateTime.</description>
+                <returnType type="DateTime"/>
+            </property>
+
+            <property key="minTime" type="expression" required="false">
+                <caption>Minimum time</caption>
+                <description>Expression returning the earliest selectable time as a DateTime value.</description>
+                <returnType type="DateTime"/>
+            </property>
+
+            <property key="maxTime" type="expression" required="false">
+                <caption>Maximum time</caption>
+                <description>Expression returning the latest selectable time as a DateTime value.</description>
+                <returnType type="DateTime"/>
+            </property>
+
+        </propertyGroup>
+
+        <propertyGroup caption="Events">
+
+            <property key="onEnter" type="action" required="false">
+                <caption>On enter</caption>
+                <description>Action executed when the picker opens.</description>
+            </property>
+
+            <property key="onLeave" type="action" required="false">
+                <caption>On leave</caption>
+                <description>Action executed when the picker closes.</description>
+            </property>
+
+            <property key="onChange" type="action" required="false">
+                <caption>On change</caption>
+                <description>Action executed when the selected date or time changes.</description>
+            </property>
+
+        </propertyGroup>
+
+        <propertyGroup caption="Translation">
+
+            <property key="startLabel" type="string" defaultValue="Start date">
+                <caption>Start date label</caption>
+                <description>Label for the start date selection.</description>
+            </property>
+
+            <property key="endLabel" type="string" defaultValue="End date">
+                <caption>End date label</caption>
+                <description>Label for the end date selection.</description>
+            </property>
+
+            <property key="todayLabel" type="string" defaultValue="Today">
+                <caption>Today label</caption>
+                <description>Label used in the date picker interface.</description>
+            </property>
+
+            <property key="clearLabel" type="string" defaultValue="Clear">
+                <caption>Clear label</caption>
+                <description>Accessible label for clearing the selected dates.</description>
+            </property>
+
+        </propertyGroup>
+    </properties>
+</widget>
